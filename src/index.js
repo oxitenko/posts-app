@@ -7,6 +7,7 @@ import createSagaMiddleware from "redux-saga";
 import { configureStore } from "@reduxjs/toolkit";
 import postsReducer from "./postsState";
 import postsSaga from "./postsSaga";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const saga = createSagaMiddleware();
 const store = configureStore({

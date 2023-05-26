@@ -1,29 +1,12 @@
 import './App.css';
-import { useSelector, useDispatch } from "react-redux";
-import { getPostsFetch } from "./postsState";
-import {useEffect} from "react";
+import Main from "./components/Main";
+import NavBar from "./components/NavBar";
 
 function App() {
-
-  const posts = useSelector(state => state.posts.posts);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getPostsFetch());
-  }, [dispatch]);
-  console.log(posts)
-
   return (
     <div className="App">
-      {
-        posts.data?.map((post) => {
-          return (
-              <div>
-                <h1>{post.title}</h1>
-              </div>
-          )
-        })
-      }
+      <NavBar/>
+      <Main/>
     </div>
   );
 }
