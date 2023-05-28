@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button"
 import avatar from "../images/juicy-yellow-cat.png"
+import Comments from "./Comments";
 const PostedCard = ({ post }) => {
 
     return (
@@ -13,10 +13,10 @@ const PostedCard = ({ post }) => {
                 <Card.Text>
                     {post.body}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Comments id={post.id}/>
             </Card.Body>
             <Card.Footer>
-                2 days ago
+                {Math.floor(Math.random() * 20)} days ago
             </Card.Footer>
         </Card>
     );
