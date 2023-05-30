@@ -1,26 +1,26 @@
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import PostedCard from "./PostedCard";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from "react-bootstrap/Container";
-import {useEffect} from "react";
-import {getPostsFetch} from "../redux-saga/postsState";
+import Loader from "./Loader";
 
 const Main = () => {
-    const posts = useSelector(state => state.posts.posts)
-    const dispatch = useDispatch();
+    const posts = useSelector(state => state.posts.posts.data)
+    const loading = useSelector(state => state.posts.isLoading)
 
-    useEffect(() => {
-        dispatch(getPostsFetch());
-    }, [dispatch]);
+    if (loading) {
+        return <Loader/>
+    }
 
     return (<Container>
-            <Row xs={1} md={1} lg={1} className="justify-content-center gap-4">
-                {posts?.map(post => <Col style={{display: "flex"}} key={post.id}>
-                    <PostedCard post={post}/>
-                </Col>)}
-            </Row>
-        </Container>);
+        <h2 style={{textAlign: "start", marginBottom: "20px"}}>See what's new with the other kittens!</h2>
+        <Row xs={1} md={1} lg={1} className="justify-content-center gap-4">
+            {posts?.map(post => <Col style={{display: "flex"}} key={post.id}>
+                <PostedCard post={post}/>
+            </Col>)}
+        </Row>
+    </Container>);
 };
 
 export default Main;

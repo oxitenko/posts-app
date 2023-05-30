@@ -3,12 +3,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import avatar from "../images/juicy-yellow-cat.png"
+import {Link} from "react-router-dom";
 
 const NavBar = () => {
     return (<>
         {<Navbar bg="secondary" expand="false" className="mb-5">
             <Container fluid>
-                <Navbar.Brand style={{fontSize: "30px", color: "#fff"}} href="#">Meower</Navbar.Brand>
+                <Link to="/" style={{textDecoration: "none"}}>
+                <Navbar.Brand style={{fontSize: "30px", color: "#fff"}}>Meower</Navbar.Brand>
+                </Link>
                 <Navbar.Toggle style={{backgroundColor: "#fff", border: "1px solid #fff"}} aria-controls={`offcanvasNavbar-expand-false`}/>
                 <Navbar.Offcanvas
                     aria-labelledby={`offcanvasNavbarLabel-expand-false`}
@@ -22,8 +25,12 @@ const NavBar = () => {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Nav className="justify-content-end flex-grow-1 pe-3">
-                            <Nav.Link href="#action1">Posts</Nav.Link>
-                            <Nav.Link href="#action2">About</Nav.Link>
+                            <Link to="/">
+                            <Nav.Link>Home</Nav.Link>
+                            </Link>
+                            <Link to="about-me">
+                            <Nav.Link href="#action2">About me</Nav.Link>
+                            </Link>
                             <Nav.Item className="mt-3">email: o.komarova92@yandex.ru</Nav.Item>
                         </Nav>
                     </Offcanvas.Body>

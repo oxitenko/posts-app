@@ -20,12 +20,14 @@ const Comments = ({id}) => {
         setShowComments(!showComments)
     };
 
-    return (<Row>
+    return (
+        <Row>
             <Col md={6} style={{width: "100%"}} className="mb-2">
                 <Button onClick={FetchDataAndShowComments} className="mb-2">
-                    Show comments
+                    <span>Show Comments</span>
                 </Button>
-                {comments?.map(comment => <Toast className="mb-3" key={comment.id} show={showComments}>
+                {comments?.map(comment =>
+                    <Toast className="mb-3" key={comment.id} show={showComments}>
                     <Toast.Header>
                         <img
                             src={avatar}
