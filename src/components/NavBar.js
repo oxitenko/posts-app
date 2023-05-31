@@ -24,14 +24,14 @@ const NavBar = () => {
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <Nav className="justify-content-end flex-grow-1 pe-3">
-                            <Link to="/">
-                            <Nav.Link>Home</Nav.Link>
+                        <Nav className="justify-content-end flex-grow-1 pe-3 gap-4">
+                            <Link style={{textDecoration: "none", color: "#000", fontFamily: "monospace", fontSize: "20px"}} to="/">
+                            <Nav.Item>Home</Nav.Item>
                             </Link>
-                            <Link to="about-me">
-                            <Nav.Link href="#action2">About me</Nav.Link>
+                            <Link style={{textDecoration: "none", color: "#000", fontFamily: "monospace", fontSize: "20px"}} to="about-me">
+                            <Nav.Item>About me</Nav.Item>
                             </Link>
-                            <Nav.Item className="mt-3">email: o.komarova92@yandex.ru</Nav.Item>
+                            <Nav.Item style={{fontFamily: "monospace", fontSize: "18px"}} className="mt-3">email: o.komarova92@yandex.ru</Nav.Item>
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
